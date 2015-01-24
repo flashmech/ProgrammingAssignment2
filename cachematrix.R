@@ -1,10 +1,12 @@
-## Put comments here that give an overall description of what your
-## functions do
+## makeCacheMatrix takes the input of a matrix,
+## and wraps the matrix in a list with 4 functions for interaction.
+## cacheSolve will attempt to solve the inverse of the wrapped matrix
+## produced by makeCacheMatrix
 
-## Write a short comment describing this function
-
+## makeCacheMatrix takes the input of a matrix,
+## and wraps the matrix in a list with 4 functions for interaction.
 makeCacheMatrix <- function(x = matrix()) {
-	# variable cc is the cache of the inverse of this matrix
+	# variable cc will store the cache of the inverse matrix
 	cc <- NULL
 	set <- function (y) {
 		x <<- y
@@ -20,6 +22,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Return a matrix that is the inverse of 'x'
+## If 'x' has cached data, it will return the cached matrix
+## Otherwise, it will solve the inverse of 'x'
 cacheSolve <- function(x, ...) {
 	cc <- x$getinverse()
 	if (!is.null(cc)) {
