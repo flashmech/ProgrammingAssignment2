@@ -4,12 +4,23 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-
+	# variable cc is the cache of the inverse of this matrix
+	cc <- NULL
+	set <- function (y) {
+		x <<- y
+		cc <<- NULL
+	}
+	get <- function () x
+	setinverse <- function (inverse) cc <<- inverse
+	getinverse <- function () cc
+	list(set = set, get = get,
+			 setinverse = setinverse,
+			 getinverse = getinverse)
 }
 
 
 ## Write a short comment describing this function
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+	## Return a matrix that is the inverse of 'x'
 }
