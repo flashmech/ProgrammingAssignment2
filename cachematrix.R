@@ -1,10 +1,14 @@
 ## makeCacheMatrix takes the input of a matrix,
 ## and wraps the matrix in a list with 4 functions for interaction.
-## cacheSolve will attempt to solve the inverse of the wrapped matrix
+## cacheSolve will solve the inverse of the wrapped matrix
 ## produced by makeCacheMatrix
 
-## makeCacheMatrix takes the input of a matrix,
-## and wraps the matrix in a list with 4 functions for interaction.
+## Returns a list with 4 functions to interact with 'x'
+## function - set -
+## function - get - returns the value of matrix 'x'
+## function - setinverse - sets the inverse of matrix 'x'
+## function - getinverse - returns null if the inverse of matrix 'x'
+## does not exist, or the inverse of matrix 'x'
 makeCacheMatrix <- function(x = matrix()) {
 	# variable cc will store the cache of the inverse matrix
 	cc <- NULL
@@ -19,7 +23,6 @@ makeCacheMatrix <- function(x = matrix()) {
 			 setinverse = setinverse,
 			 getinverse = getinverse)
 }
-
 
 ## Return a matrix that is the inverse of 'x'
 ## If 'x' has cached data, it will return the cached matrix
